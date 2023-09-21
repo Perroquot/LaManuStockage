@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<html lang="fr"></html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire d'enregistrement de matériel</title>
+    <link rel="stylesheet" href="./assets/css/style2.css">
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script async src="./assets/js/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Ajouter du matériel Campus Amiens</h1>
+    </header>
+    <div class="navbar-container">
+    <div class="navbar">
+        <img src="./assets/img/logo_manu.png">
+        <a href="#"><div class="cat_nav"><i class="fa-solid fa-bars"></i> Vue d'ensemble <br></div></a>
+        <a href="#"><div class="cat_nav"><i class="fa-solid fa-box-archive"></i> Emprunter / Rendre <br></div></a>
+        <div class="cat_nav"><div class="dropdown">
+            <button id="button"class="dropdown-button" onclick="toggleDropdown()"><i class="fa-solid fa-box"></i> Matériel <i class="fa-solid fa-chevron-down"></i></button>
+            <div id="dropdown" class="dropdown-content">
+                <a href="liste_stock.php">Stock</a>
+                <a href="#">Détail</a>
+                <a href="ajoutmat.html">Ajouter</a>
+                <a href="#">Historique</a>
+            </div>
+        </div></div>
+        <div class="leave_nav"><i class="fa-solid fa-arrow-right-from-bracket fa-xl" onclick="toggleNavbar()"></i></div>
+    </div>
+    </div>
+    <main>
+        <div class="main-top-margin">
+        <div class="addtext">Ajouter du matériel</div>
+        <form action="traitement_ajout.php" method="POST">
+            <label for="nom_element">Nom de l'élément</label><br>
+            <input class="input" type="text" id="nom_element" name="nom_element" placeholder="PC DELL Latitude E7270" required><br>
+
+            <label for="numero_etiquette">Numéro de l'étiquette</label><br>
+            <input class="input" type="text" id="numero_etiquette" name="numero_etiquette" placeholder="AMPC001" required><br>
+            
+            <label for="numero_serie">Numéro de série</label><br>
+            <input class="input" type="text" id="numero_serie" name="numero_serie" placeholder="DP5C2M8" required><br>
+            
+            <div class="mobprop">
+                <div class="mob">
+                    <label for="mobilite">Mobilité</label>
+                    <select class="input_mobprop" id="mobilite" name="mobilite" placeholder="--">
+                        <option value="oui">Oui</option>
+                        <option value="non">Non</option>
+        </select><br>
+    </div>
+    <div class="prop">
+        <label for="propriete">Propriété</label>
+        <select class="input_mobprop" id="propriete" name="propriete" placeholder="--">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
+        </select><br>
+    </div>
+</div>
+    <label for="commentaire">Commentaire</label><br>
+    <textarea class="input_comm" id="commentaire" name="commentaire" rows="5" cols="40" placeholder="Ecrivez votre message..."></textarea><br>
+    <a href="liste_stock.php"><input class="button"type="submit" value="Ajouter"></a>
+</form>
+</div>
+
+</main>
+</body>
+</html>
